@@ -1,0 +1,5 @@
+syntax:glob
+vim/spell/*.add
+vim/spell/*.spl
+.VimballRecord
+.netrwhist
