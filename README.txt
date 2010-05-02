@@ -25,13 +25,13 @@ Syntax
 Plugins
 -------
 
-* SnippetsEMU_ by Felix Ingram et al.
+* snipmate_ by Michael Sanders
 * NerdTree_ by Martin Grenfell
 * vimBall_ by Charles E. Campbell, Jr
 * mru_ by Yegappan Lakshmanan
 * fuzzyfinder_ by Takeshi Nishida
 
-.. _snippetsemu: http://code.google.com/p/snippetsemu/
+.. _snipmate: http://www.vim.org/scripts/script.php?script_id=2540
 .. _nerdtree: http://www.vim.org/scripts/script.php?script_id=1658
 .. _vimball: http://vim.sourceforge.net/scripts/script.php?script_id=1502
 .. _mru: http://www.vim.org/scripts/script.php?script_id=521
