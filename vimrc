@@ -42,8 +42,8 @@ else
     colorscheme osx_like
 
     "" Go into complete fullscreen mode
-    set fuoptions=maxvert,maxhorz
-    au GUIEnter * set fullscreen
+    "set fuoptions=maxvert,maxhorz
+    "au GUIEnter * set fullscreen
 
     imap <C-A> <HOME>
     imap <C-E> <END>
