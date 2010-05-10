@@ -35,6 +35,7 @@ inoremap <Up> <C-o>gk
 syntax enable
 
 "" Helper function/command for marking overly long lines
+" Based on http://stackoverflow.com/questions/235439/vim-80-column-layout-concerns/235970#235970
 function HighlightAfter(v)
     highlight clear OverLength
     let start = str2nr(a:v)
