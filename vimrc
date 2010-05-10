@@ -31,6 +31,21 @@ vnoremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 
+"" Highlighting
+syntax enable
+
+"" Helper function/command for marking overly long lines
+function HighlightAfter(v)
+    highlight clear OverLength
+    let start = str2nr(a:v)
+    if start > -1
+        let re = '\%' . a:v . 'v.\+'
+        highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+        call matchadd("OverLength", re)
+    endif
+endfunction
+command -nargs=1 HLE :call HighlightAfter(<f-args>)
+
 """ If working in the console, use a dark theme
 if !has("gui_running")
     set term=xterm
@@ -51,17 +66,10 @@ else
     
     nmap <D-S-LEFT> :tabprevious<CR>
     nmap <D-S-RIGHT> :tabnext<CR>
-    "" Add some highlighting to everything past the 78th character
-    hi Error78 guibg=#DDDDDD
-    match Error78 /\%>78v.\+/
-
-    set cul " also highlight the current line
-    " Don't use the highlighting in the terminal because it is *too*
-    " distracting
 endif
 
-"" Highlighting
-syntax enable
+set cul " also highlight the current line
+
 set backspace=indent,eol,start
 
 "" ignore these files always
@@ -107,4 +115,5 @@ autocmd BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
   \   exe "normal g`\"" |
   \ endif
+
 

@@ -1,0 +1,1 @@
+call HighlightAfter(80)
