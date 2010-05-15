@@ -34,6 +34,9 @@ inoremap <Up> <C-o>gk
 "" Highlighting
 syntax enable
 
+highlight Error ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+match Error /\s\+$/
+
 "" Helper function/command for marking overly long lines
 " Based on http://stackoverflow.com/questions/235439/vim-80-column-layout-concerns/235970#235970
 function HighlightAfter(v)
@@ -41,8 +44,7 @@ function HighlightAfter(v)
     let start = str2nr(a:v)
     if start > -1
         let re = '\%' . a:v . 'v.\+'
-        highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-        call matchadd("OverLength", re)
+        call matchadd("Error", re)
     endif
 endfunction
 command -nargs=1 HLE :call HighlightAfter(<f-args>)
@@ -104,6 +106,7 @@ autocmd BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit
 autocmd BufNewFile,BufRead *.mako set syntax=html
 autocmd BufNewFile,BufRead *.rst set syntax=rest
 autocmd BufNewFile,BufRead *.mkd set filetype=mkd
+autocmd BufNewFile,BufRead *.mdown set filetype=mkd
 autocmd BufNewFile,BufRead *.mxml set filetype=mxml
 autocmd BufNewFile,BufRead *.as set filetype=actionscript
 autocmd BufRead,BufNewFile * set path=$PWD/**
@@ -118,3 +121,6 @@ autocmd BufReadPost *
   \ endif
 
 
+" Do some spell checking
+set spelllang=de,en
+set spellsuggest=5 " I only want the top 5 suggestions
