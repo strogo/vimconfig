@@ -51,13 +51,19 @@ command -nargs=1 HLE :call HighlightAfter(<f-args>)
 
 """ If working in the console, use a dark theme
 if !has("gui_running")
-    set term=xterm
+    if !has("windows")
+        set term=xterm
+    endif
     set background=dark
 else
-    set guifont=DejaVuSansMono:h14
+    if has("macunix")
+        set guifont=DejaVuSansMono:h14
+    elseif has("windows")
+        set guifont=Courier\ New:h10
+    endif
+    colorscheme osx_like
     "" I like my guis light and wide
     set background=light
-    colorscheme osx_like
 
     "" Go into complete fullscreen mode
     "set fuoptions=maxvert,maxhorz
