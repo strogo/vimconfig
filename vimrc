@@ -1,4 +1,8 @@
-colorscheme desert
+if !has("unix")
+    colorscheme default
+else
+    colorscheme desert
+endif
 
 set encoding=UTF8
 set formatoptions=l
@@ -51,14 +55,14 @@ command -nargs=1 HLE :call HighlightAfter(<f-args>)
 
 """ If working in the console, use a dark theme
 if !has("gui_running")
-    if !has("windows")
+    if has("unix")
         set term=xterm
     endif
     set background=dark
 else
     if has("macunix")
         set guifont=DejaVuSansMono:h14
-    elseif has("windows")
+    elseif !has("unix")
         set guifont=Courier\ New:h10
     endif
     colorscheme osx_like
