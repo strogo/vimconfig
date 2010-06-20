@@ -68,6 +68,7 @@ else
     colorscheme osx_like
     "" I like my guis light and wide
     set background=light
+    set cul " also highlight the current line
 
     "" Go into complete fullscreen mode
     "set fuoptions=maxvert,maxhorz
@@ -85,8 +86,6 @@ else
     nmap <D-4> 4gt
     nmap <D-5> 5gt
 endif
-
-set cul " also highlight the current line
 
 set backspace=indent,eol,start
 
