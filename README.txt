@@ -15,11 +15,13 @@ Syntax
 * gitcommit as it is part of the git-distribution's contrib/-package
 * Markdown_ by Ben Williams
 * ReST_ by Estienne Swart
+* SCSS_ by Daniel Hofstetter
 
 .. _ActionScript: http://www.abdulqabiz.com/files/vim/actionscript.vim
 .. _Django: http://www.vim.org/scripts/script.php?script_id=1487
 .. _Markdown: http://plasticboy.com/markdown-vim-mode/
 .. _ReST: http://www.sanbi.ac.za/~estienne/vim/syntax/rest.vim
+.. _SCSS: http://github.com/cakebaker/scss-syntax.vim
 
 
 Plugins
